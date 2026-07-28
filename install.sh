@@ -35,6 +35,19 @@ else
     echo ".vllmrc 已存在于 ~/.bashrc 中，跳过追加。"
 fi
 
+cp ./.secrets ~/.secrets
+# ==========================================
+# 第二部分：复制配置并避免重复添加到 .bashrc
+# ==========================================
+# 检查 .bashrc 中是否已经包含引入命令
+SECRETSRC_CMD=". $HOME/.secrets"
+if ! grep -Fq "$SECRETSRC_CMD" ~/.bashrc; then
+    echo "$SECRETSRC_CMD" >> ~/.bashrc
+    echo "已将 .secrets 引入代码追加到 ~/.bashrc"
+else
+    echo ".secrets 已存在于 ~/.bashrc 中，跳过追加。"
+fi
+
 . $HOME/.bashrc
 
 apt-get update
