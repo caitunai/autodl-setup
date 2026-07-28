@@ -38,8 +38,8 @@ fi
 . $HOME/.bashrc
 
 apt-get update
-apt-get -y install pkg-config libopus-dev libopusfile-dev ffmpeg
+apt-get -y install pkg-config libopus-dev libopusfile-dev ffmpeg nginx
 apt-get clean
-uv pip install httpx[socks]
+uv pip install httpx[socks] supervisor
 
 ./install_onnxruntime_gpu.sh
