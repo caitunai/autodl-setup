@@ -7,5 +7,7 @@ echo ". $HOME/.vllmrc" >> ~/.bashrc
 
 . $HOME/.bashrc
 uv venv
+. $HOME/.bashrc
+
 apt-get update
 apt-get -y install pkg-config libopus-dev libopusfile-dev ffmpeg
