@@ -11,7 +11,7 @@ if ! command -v uv >/dev/null 2>&1; then
     [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
     
     # 创建虚拟环境
-    uv venv
+    uv venv ~/.venv --prompt `whoami`
     
     # 检查并添加虚拟环境激活脚本到 .bashrc（防重复）
     ACTIVATE_CMD=". $HOME/.venv/bin/activate"
@@ -39,3 +39,7 @@ fi
 
 apt-get update
 apt-get -y install pkg-config libopus-dev libopusfile-dev ffmpeg
+apt-get clean
+uv pip install httpx[socks]
+
+./install_onnxruntime_gpu.sh
