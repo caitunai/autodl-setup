@@ -1,0 +1,7 @@
+source /root/.venv/bin/activate
+export HF_HOME=/root/autodl-fs/models/huggingface
+export VLLM_CACHE_ROOT=/root/autodl-fs/models/vllm
+export FLASHINFER_WORKSPACE_BASE=/root/autodl-fs/models/flashinfer
+export FLASHINFER_DISABLE_VERSION_CHECK=1
+export UV_CACHE_DIR="/root/autodl-tmp/uv-cache"
+#export PYTHONPATH=/root/luven-api/lid/ext:$PYTHONPATH
